@@ -5,8 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="常用注解的使用方法(长期更新！), Zxb&#39;s Blog">
-    <meta name="description" content="@ResponseBody
-作用：@ResponseBody注解用于将Controller的方法返回的对象，通过springmvc提供的HttpMessageConverter接口转换为指定格式的数据如：json,xml等，通过Respon">
+    <meta name="description" content="注入Bean的注解@Autowired
+由bean提供
+
+
+@Autowired可以作用在变量、setter方法、构造函数上；
+属性: required(true, false)
+
+@Inject
+用法与@Autowired一致。(由JSR">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -458,24 +465,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h2><blockquote>
-<p>作用：@ResponseBody注解用于将Controller的方法返回的对象，通过springmvc提供的HttpMessageConverter接口转换为指定格式的数据如：json,xml等，通过Response响应给客户端。</p>
+                <h1 id="注入Bean的注解"><a href="#注入Bean的注解" class="headerlink" title="注入Bean的注解"></a>注入Bean的注解</h1><h2 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h2><blockquote>
+<p>由bean提供</p>
+</blockquote>
+<ul>
+<li>@Autowired可以作用在变量、setter方法、构造函数上；</li>
+<li>属性: required(true, false)</li>
+</ul>
+<h2 id="Inject"><a href="#Inject" class="headerlink" title="@Inject"></a>@Inject</h2><blockquote>
+<p>用法与@Autowired一致。(由JSR-330提供)</p>
+</blockquote>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h2><blockquote>
+<p>@Autowired、@Inject是默认按照类型匹配的，@Resource是按照名称匹配的，@Autowired如果需要按照名称匹配需要和@Qualifier一起使用，@Inject和@Name一起使用。(由JSR-250提供)</p>
+</blockquote>
+<h2 id="Primary"><a href="#Primary" class="headerlink" title="@Primary"></a>@Primary</h2><blockquote>
+<p>让spring进行自动装配的时候，默认使用首选的bean，和@Qualifier一个效果。</p>
 </blockquote>
 <hr>
+<h1 id="SpringMVC常用注解"><a href="#SpringMVC常用注解" class="headerlink" title="SpringMVC常用注解"></a>SpringMVC常用注解</h1><h2 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h2><blockquote>
+<p>用于将Controller的方法返回的对象，通过springmvc提供的HttpMessageConverter接口转换为指定格式的数据如：json,xml等，通过Response响应给客户端。</p>
+</blockquote>
 <h2 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h2><blockquote>
-<p>作用：@RequestBody注解用于读取http请求的内容(字符串)，通过springmvc提供的HttpMessageConverter接口将读到的内容（json数据）转换为java对象并绑定到Controller方法的参数上。</p>
+<p>用于读取http请求的内容(字符串)，通过springmvc提供的HttpMessageConverter接口将读到的内容（json数据）转换为java对象并绑定到Controller方法的参数上。</p>
 </blockquote>
 <hr>
 <h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><blockquote>
+<p>用于映射web请求，包括访问路径和参数。</p>
 </blockquote>
 <hr>
 <h2 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h2><blockquote>
-<p>映射 URL 绑定的占位符</p>
+<p>映射 URL 绑定的占位符，用于接收路径参数，比如@RequestMapping(“/hello/{name}”)声明的路径，将注解放在参数前，即可获取该值，通常作为Restful的接口实现方法。</p>
 </blockquote>
-<ul>
-<li></li>
+<h1 id="Enable-注解说明"><a href="#Enable-注解说明" class="headerlink" title="Enable***注解说明"></a>Enable***注解说明</h1><h2 id="这些注解主要是用来开启对xxx的支持："><a href="#这些注解主要是用来开启对xxx的支持：" class="headerlink" title="这些注解主要是用来开启对xxx的支持："></a>这些注解主要是用来开启对xxx的支持：</h2><ul>
+<li>@EnableAspectAutoProxy：开启对AspectJ自动代理的支持；</li>
+<li>@EnableAsync：开启异步方法的支持；</li>
+<li>@EnableScheduling：开启计划任务的支持；</li>
+<li>@EnableWebMvc：开启web MVC的配置支持；</li>
+<li>@EnableConfigurationProperties：开启对 @ConfigurationProperties注解配置Bean的支持；</li>
+<li>@EnableJpaRepositories：开启对SpringData JPA Repository的支持；</li>
+<li>@EnableTransactionManagement：开启注解式事务的支持；</li>
+<li>@EnableCaching：开启注解式的缓存支持；</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
