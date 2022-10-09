@@ -4,10 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ant Design Pro, Zxb&#39;s Blog">
-    <meta name="description" content="Ant Design Pro的使用Ant Design - 一套企业级 UI 设计语言和 React 组件库
-Ant Design Pro - 开箱即用的中台前端/设计解决方案
-注：Ant Design Pro 是Ant Design 的脚">
+    <meta name="keywords" content="实用方法, Zxb&#39;s Blog">
+    <meta name="description" content="RestTemplate
+(url, 实体: Map, Class, responseType)
+
+提供多种便携访问远程http服务的方法，简单的restgul服务模板~  
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@ Ant Design Pro - 开箱即用的中台前端/设计解决方案
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ant Design Pro | Zxb&#39;s Blog</title>
+    <title>实用方法 | Zxb&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -289,12 +291,12 @@ Ant Design Pro - 开箱即用的中台前端/设计解决方案
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ant Design Pro</h1>
+                    <h1 class="description center-align post-title">实用方法</h1>
                 </div>
             </div>
         </div>
@@ -435,7 +437,7 @@ Ant Design Pro - 开箱即用的中台前端/设计解决方案
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-08
+                    2019-06-17
                 </div>
                 
 
@@ -459,49 +461,10 @@ Ant Design Pro - 开箱即用的中台前端/设计解决方案
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Ant-Design-Pro的使用"><a href="#Ant-Design-Pro的使用" class="headerlink" title="Ant Design Pro的使用"></a>Ant Design Pro的使用</h1><p><a target="_blank" rel="noopener" href="https://ant.design/index-cn">Ant Design - 一套企业级 UI 设计语言和 React 组件库</a></p>
-<p><a target="_blank" rel="noopener" href="https://pro.ant.design/index-cn">Ant Design Pro - 开箱即用的中台前端/设计解决方案</a></p>
-<p>注：Ant Design Pro 是Ant Design 的脚手架，构建项目基本框架用Pro ，要使用其中一些组件就去Ant Design中去查找。</p>
-<p>1、初始化ant-design，并构建一个myapp</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"># 使用 npm，如果npm不是最新版需要运行npm install -g npm@最新版本号
-npm i @ant-design/pro-cli -g
-# 构建一个Demo应用myapp，myapp是自定义的，可以根据需要修改
-pro create myapp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>2、选择Umi的版本</p>
-<pre class="line-numbers language-none"><code class="language-none">根据官方文档，目前如果选择了 umi@4 版本，暂时还不支持全量区块。选择umi@3的complete版本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>3、安装依赖</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">#进入mc目录
-cd mc
-#根据官方文档采用tyarn安装更快
-tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>4、启动</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">npm run start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript">├── mock                     # 本地模拟数据
-├── public
-│   └── favicon.ico          # Favicon
-├── src
-│   ├── assets               # 本地静态资源
-│   ├── common               # 应用公用配置，如导航信息
-│   ├── components           # 业务通用组件
-│   ├── e2e                  # 集成测试用例
-│   ├── layouts              # 通用布局
-│   ├── models               # dva model
-│   ├── routes               # 业务页面入口和常用模板
-│   ├── services             # 后台接口服务
-│   ├── utils                # 工具库
-│   ├── g2.js                # 可视化图形配置
-│   ├── theme.js             # 主题配置
-│   ├── index.ejs            # HTML 入口模板
-│   ├── index.js             # 应用入口
-│   ├── index.less           # 全局样式
-│   └── router.js            # 路由入口
-├── tests                    # 测试工具
-├── README.md
-└── package.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="RestTemplate"><a href="#RestTemplate" class="headerlink" title="RestTemplate"></a>RestTemplate</h2><blockquote>
+<p>(url, 实体: Map, Class<T>, responseType)</p>
+</blockquote>
+<p>提供多种便携访问远程http服务的方法，简单的restgul服务模板~  </p>
 
                 
             </div>
@@ -528,7 +491,7 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhaxiaobao.github.io/2022/10/08/Ant%20Design%20Pro/">http://zhaxiaobao.github.io/2022/10/08/Ant%20Design%20Pro/</a>
+                    <a href="http://zhaxiaobao.github.io/2019/06/17/shi-yong-fang-fa/">http://zhaxiaobao.github.io/2019/06/17/shi-yong-fang-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -617,13 +580,13 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/09/ELK/">
+                <a href="/2019/08/29/ji-lian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ELK">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="级联">
                         
-                        <span class="card-title">ELK</span>
+                        <span class="card-title">级联</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -634,12 +597,16 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-29
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            SmallBaby·Zha
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/sql/" class="post-category">
+                                    sql
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -647,8 +614,8 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/sql/">
+                        <span class="chip bg-color">sql</span>
                     </a>
                     
                 </div>
@@ -662,13 +629,13 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/15/UUID%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                <a href="/2019/05/03/chang-yong-zhu-jie-shi-yong-fang-fa-chang-qi-geng-xin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="UUID工具类">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="常用注解的使用方法(长期更新！)">
                         
-                        <span class="card-title">UUID工具类</span>
+                        <span class="card-title">常用注解的使用方法(长期更新！)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -679,7 +646,7 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-03
                             </span>
                         <span class="publish-author">
                             
@@ -692,8 +659,8 @@ tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/typescript/">
+                        <span class="chip bg-color">typescript</span>
                     </a>
                     
                 </div>

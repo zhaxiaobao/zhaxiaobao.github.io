@@ -4,16 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="常用注解的使用方法(长期更新！), Zxb&#39;s Blog">
-    <meta name="description" content="注入Bean的注解@Autowired
-由bean提供
-
-
-@Autowired可以作用在变量、setter方法、构造函数上；
-属性: required(true, false)
-
-@Inject
-用法与@Autowired一致。(由JSR">
+    <meta name="keywords" content="Ant Design Pro, Zxb&#39;s Blog">
+    <meta name="description" content="Ant Design Pro的使用Ant Design - 一套企业级 UI 设计语言和 React 组件库
+Ant Design Pro - 开箱即用的中台前端/设计解决方案
+注：Ant Design Pro 是Ant Design 的脚">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>常用注解的使用方法(长期更新！) | Zxb&#39;s Blog</title>
+    <title>Ant Design Pro | Zxb&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -300,7 +294,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">常用注解的使用方法(长期更新！)</h1>
+                    <h1 class="description center-align post-title">Ant Design Pro</h1>
                 </div>
             </div>
         </div>
@@ -425,8 +419,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/typescript/">
-                                <span class="chip bg-color">typescript</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -437,8 +431,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B3%A8%E8%A7%A3/" class="post-category">
-                                注解
+                            <a href="/categories/Restful/" class="post-category">
+                                Restful
                             </a>
                         
                     </div>
@@ -450,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-03
+                    2022-10-08
                 </div>
                 
 
@@ -474,47 +468,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="注入Bean的注解"><a href="#注入Bean的注解" class="headerlink" title="注入Bean的注解"></a>注入Bean的注解</h1><h2 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h2><blockquote>
-<p>由bean提供</p>
-</blockquote>
-<ul>
-<li>@Autowired可以作用在变量、setter方法、构造函数上；</li>
-<li>属性: required(true, false)</li>
-</ul>
-<h2 id="Inject"><a href="#Inject" class="headerlink" title="@Inject"></a>@Inject</h2><blockquote>
-<p>用法与@Autowired一致。(由JSR-330提供)</p>
-</blockquote>
-<h2 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h2><blockquote>
-<p>@Autowired、@Inject是默认按照类型匹配的，@Resource是按照名称匹配的，@Autowired如果需要按照名称匹配需要和@Qualifier一起使用，@Inject和@Name一起使用。(由JSR-250提供)</p>
-</blockquote>
-<h2 id="Primary"><a href="#Primary" class="headerlink" title="@Primary"></a>@Primary</h2><blockquote>
-<p>让spring进行自动装配的时候，默认使用首选的bean，和@Qualifier一个效果。</p>
-</blockquote>
-<hr>
-<h1 id="SpringMVC常用注解"><a href="#SpringMVC常用注解" class="headerlink" title="SpringMVC常用注解"></a>SpringMVC常用注解</h1><h2 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h2><blockquote>
-<p>用于将Controller的方法返回的对象，通过springmvc提供的HttpMessageConverter接口转换为指定格式的数据如：json,xml等，通过Response响应给客户端。</p>
-</blockquote>
-<h2 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h2><blockquote>
-<p>用于读取http请求的内容(字符串)，通过springmvc提供的HttpMessageConverter接口将读到的内容（json数据）转换为java对象并绑定到Controller方法的参数上。</p>
-</blockquote>
-<hr>
-<h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><blockquote>
-<p>用于映射web请求，包括访问路径和参数。</p>
-</blockquote>
-<hr>
-<h2 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h2><blockquote>
-<p>映射 URL 绑定的占位符，用于接收路径参数，比如@RequestMapping(“/hello/{name}”)声明的路径，将注解放在参数前，即可获取该值，通常作为Restful的接口实现方法。</p>
-</blockquote>
-<h1 id="Enable-注解说明"><a href="#Enable-注解说明" class="headerlink" title="Enable***注解说明"></a>Enable***注解说明</h1><h2 id="这些注解主要是用来开启对xxx的支持："><a href="#这些注解主要是用来开启对xxx的支持：" class="headerlink" title="这些注解主要是用来开启对xxx的支持："></a>这些注解主要是用来开启对xxx的支持：</h2><ul>
-<li>@EnableAspectAutoProxy：开启对AspectJ自动代理的支持；</li>
-<li>@EnableAsync：开启异步方法的支持；</li>
-<li>@EnableScheduling：开启计划任务的支持；</li>
-<li>@EnableWebMvc：开启web MVC的配置支持；</li>
-<li>@EnableConfigurationProperties：开启对 @ConfigurationProperties注解配置Bean的支持；</li>
-<li>@EnableJpaRepositories：开启对SpringData JPA Repository的支持；</li>
-<li>@EnableTransactionManagement：开启注解式事务的支持；</li>
-<li>@EnableCaching：开启注解式的缓存支持；</li>
-</ul>
+                <h1 id="Ant-Design-Pro的使用"><a href="#Ant-Design-Pro的使用" class="headerlink" title="Ant Design Pro的使用"></a>Ant Design Pro的使用</h1><p><a target="_blank" rel="noopener" href="https://ant.design/index-cn">Ant Design - 一套企业级 UI 设计语言和 React 组件库</a></p>
+<p><a target="_blank" rel="noopener" href="https://pro.ant.design/index-cn">Ant Design Pro - 开箱即用的中台前端/设计解决方案</a></p>
+<p>注：Ant Design Pro 是Ant Design 的脚手架，构建项目基本框架用Pro ，要使用其中一些组件就去Ant Design中去查找。</p>
+<p>1、初始化ant-design，并构建一个myapp</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"># 使用 npm，如果npm不是最新版需要运行npm install -g npm@最新版本号
+npm i @ant-design/pro-cli -g
+# 构建一个Demo应用myapp，myapp是自定义的，可以根据需要修改
+pro create myapp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2、选择Umi的版本</p>
+<pre class="line-numbers language-none"><code class="language-none">根据官方文档，目前如果选择了 umi@4 版本，暂时还不支持全量区块。选择umi@3的complete版本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3、安装依赖</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">#进入mc目录
+cd mc
+#根据官方文档采用tyarn安装更快
+tyarn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4、启动</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">npm run start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript">├── mock                     # 本地模拟数据
+├── public
+│   └── favicon.ico          # Favicon
+├── src
+│   ├── assets               # 本地静态资源
+│   ├── common               # 应用公用配置，如导航信息
+│   ├── components           # 业务通用组件
+│   ├── e2e                  # 集成测试用例
+│   ├── layouts              # 通用布局
+│   ├── models               # dva model
+│   ├── routes               # 业务页面入口和常用模板
+│   ├── services             # 后台接口服务
+│   ├── utils                # 工具库
+│   ├── g2.js                # 可视化图形配置
+│   ├── theme.js             # 主题配置
+│   ├── index.ejs            # HTML 入口模板
+│   ├── index.js             # 应用入口
+│   ├── index.less           # 全局样式
+│   └── router.js            # 路由入口
+├── tests                    # 测试工具
+├── README.md
+└── package.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -541,7 +537,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhaxiaobao.github.io/2019/05/03/%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/">http://zhaxiaobao.github.io/2019/05/03/%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/</a>
+                    <a href="http://zhaxiaobao.github.io/2022/10/08/ant-design-pro/">http://zhaxiaobao.github.io/2022/10/08/ant-design-pro/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +575,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/typescript/">
-                                    <span class="chip bg-color">typescript</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -630,13 +626,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/17/%E4%BD%BF%E5%AE%9E%E7%94%A8%E6%96%B9%E6%B3%95/">
+                <a href="/2022/10/09/elk/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="实用方法">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ELK">
                         
-                        <span class="card-title">实用方法</span>
+                        <span class="card-title">ELK</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,7 +643,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-09
                         </span>
                         <span class="publish-author">
                             
@@ -672,16 +668,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/03/%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/">
+                <a href="/2021/07/15/uuid-gong-ju-lei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="常用注解的使用方法(长期更新！)">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="UUID工具类">
                         
-                        <span class="card-title">常用注解的使用方法(长期更新！)</span>
+                        <span class="card-title">UUID工具类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -692,26 +688,21 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B3%A8%E8%A7%A3/" class="post-category">
-                                    注解
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            SmallBaby·Zha
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/typescript/">
-                        <span class="chip bg-color">typescript</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>

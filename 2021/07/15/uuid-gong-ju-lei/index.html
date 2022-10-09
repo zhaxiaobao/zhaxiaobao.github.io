@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="级联, Zxb&#39;s Blog">
-    <meta name="description" content="一对多级联查询一条主表数据对应多条子表数据 ，由关联表产生联系，在pojo类中，子表以子表pojo类型的集合形式存在于主表pojo类的属性上
-所谓级联查询就是将主表不能直接查的数据，使用自定义映射规则调用子表来查，通过column属性将主表">
+    <meta name="keywords" content="UUID工具类, Zxb&#39;s Blog">
+    <meta name="description" content="package com.zgiot.zx.production.utils;
+
+import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.util.IdUtil;
+import ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>级联 | Zxb&#39;s Blog</title>
+    <title>UUID工具类 | Zxb&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -288,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">级联</h1>
+                    <h1 class="description center-align post-title">UUID工具类</h1>
                 </div>
             </div>
         </div>
@@ -418,8 +421,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/xml/">
-                                <span class="chip bg-color">xml</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -434,7 +437,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-29
+                    2021-07-15
                 </div>
                 
 
@@ -458,31 +461,136 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一对多级联查询"><a href="#一对多级联查询" class="headerlink" title="一对多级联查询"></a>一对多级联查询</h3><p>一条主表数据对应多条子表数据 ，由关联表产生联系，在pojo类中，子表以子表pojo类型的集合形式存在于主表pojo类的属性上</p>
-<p>所谓级联查询就是将主表不能直接查的数据，使用自定义映射规则调用子表来查，通过column属性将主表id传给子查询，子查询使用孙子查询在关联表中查询主查询传来的id对应的子表id，再将子表id作为条件查询出所有子表对象，然后封装在集合中映射到主表属性上</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>主查询返回值类型<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>映射规则id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>主键字段名<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>字段名1<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>属性名1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    	···
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>字段名n<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>属性名n<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>collection</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>属性名<span class="token punctuation">"</span></span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>主键id<span class="token punctuation">"</span></span>
-                    <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>子查询方法全类名<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>collection</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resultMap</span><span class="token punctuation">></span></span>
+                <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.zgiot.zx.production.utils;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>主表查询id<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>映射规则id<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    select * from 表名  where id = #&#123;传入id&#125;
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.util.IdUtil;
+import org.springframework.beans.factory.annotation.Value;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>子查询方法id<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>子表pojo类型<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    select * from 子表名  
-    where 子表id in (
-    		<span class="token comment">&lt;!--
-				在关联表中查询所有主表对应的子表的id
-			--></span>
-    		select 子表id from 关联表
-    		where 关联表id=#&#123;主表id&#125;)
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Random;
+
+public class UUIDUtil &#123;
+
+
+    @Value(&quot;$&#123;snowflake.client-id&#125;&quot;)
+    private static long clintId;
+    @Value(&quot;$&#123;snowflake.client-id&#125;&quot;)
+    private static long dataCenterId;
+
+    private static Snowflake snowflake;
+
+    static&#123;
+        snowflake &#x3D; IdUtil.createSnowflake(clintId, dataCenterId);
+    &#125;
+
+
+    &#x2F;**
+     * 生成不带-的UUID
+     *
+     * @return UUID
+     *&#x2F;
+    public static String getUUID() &#123;
+        &#x2F;&#x2F; 返回用UUID
+        String uuidResult &#x3D; &quot;&quot;;
+        &#x2F;&#x2F; 临时用UUID
+        String uuidTemp &#x3D; &quot;&quot;;
+        &#x2F;&#x2F; 取得UUID存储到临时用UUID
+        uuidTemp &#x3D; java.util.UUID.randomUUID().toString();
+
+        &#x2F;&#x2F; 替换掉所有-字符
+        uuidResult &#x3D; uuidTemp.replaceAll(&quot;-&quot;, &quot;&quot;);
+
+        &#x2F;&#x2F; 返回UUID
+        return uuidResult;
+    &#125;
+
+    &#x2F;**
+     * java生成随机数字和字母组合
+     *
+     * @param length
+     *            [生成随机数的长度]
+     * @return
+     *&#x2F;
+    public static String getCharAndNumr(int length) &#123;
+        String val &#x3D; &quot;&quot;;
+        Random random &#x3D; new Random();
+        for (int i &#x3D; 0; i &lt; length; i++) &#123;
+            &#x2F;&#x2F; 输出字母还是数字
+            String charOrNum &#x3D; random.nextInt(2) % 2 &#x3D;&#x3D; 0 ? &quot;char&quot; : &quot;num&quot;;
+            &#x2F;&#x2F; 字符串
+            if (&quot;char&quot;.equalsIgnoreCase(charOrNum)) &#123;
+                &#x2F;&#x2F; 取得大写字母还是小写字母
+                int choice &#x3D; random.nextInt(2) % 2 &#x3D;&#x3D; 0 ? 65 : 97;
+                val +&#x3D; (char) (choice + random.nextInt(26));
+            &#125; else if (&quot;num&quot;.equalsIgnoreCase(charOrNum)) &#123; &#x2F;&#x2F; 数字
+                val +&#x3D; String.valueOf(random.nextInt(10));
+            &#125;
+        &#125;
+        return val;
+    &#125;
+
+    &#x2F;**
+     * 随机生成纯数字
+     *
+     * @param length
+     * @return
+     *&#x2F;
+    public static String getNumber(int length) &#123;
+        char[] chars &#x3D; &#123; &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;0&#39; &#125;;
+        Random random &#x3D; new Random();
+        StringBuffer sb &#x3D; new StringBuffer();
+        for (int i &#x3D; 1; i &lt;&#x3D; length; i++) &#123;
+            sb.append(chars[random.nextInt(chars.length)]);
+        &#125;
+        return sb.toString();
+    &#125;
+
+
+    &#x2F;**
+     * 获取雪花算法唯一ID
+     * @return
+     *&#x2F;
+    public static long getSnowflakeId()&#123;
+        return snowflake.nextId();
+    &#125;
+
+
+
+
+    &#x2F;**
+     * 根据UUID计算路径
+     * @param uuid
+     * @return
+     *&#x2F;
+    public static String getUUIDPath(String uuid)&#123;
+        StringBuilder builder&#x3D;new StringBuilder();
+        builder.append(&quot;&#x2F;&quot;);
+        builder.append((uuid.substring(0, 3).hashCode())%100+&quot;&quot;).append(&quot;&#x2F;&quot;);
+        builder.append((uuid.substring(7,10).hashCode())%100+&quot;&quot;).append(&quot;&#x2F;&quot;);
+        builder.append((uuid.substring(11,14).hashCode())%100+&quot;&quot;).append(&quot;&#x2F;&quot;);
+        return builder.toString();
+    &#125;
+
+    public static void main(String[] args) &#123;
+&#x2F;&#x2F;        System.out.println(UUIDUtil.getCharAndNumr(16));
+&#x2F;&#x2F;        System.out.println(UUIDUtil.getUUID());
+&#x2F;&#x2F;        for(int i&#x3D;0;i&lt;100;i++)&#123;
+&#x2F;&#x2F;            System.out.println(UUIDUtil.getUUID());
+&#x2F;&#x2F;        &#125;
+        &#x2F;&#x2F;TODO 测试时间
+&#x2F;&#x2F;        String paramDate&#x3D;&quot;2020-01-02&quot;;
+&#x2F;&#x2F;        DateTimeFormatter df&#x3D;DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;);
+&#x2F;&#x2F;        LocalDate localDate &#x3D; LocalDate.parse(paramDate, df);
+&#x2F;&#x2F;        System.out.println(localDate.getDayOfMonth());
+&#x2F;&#x2F;        System.out.println(localDate.with(TemporalAdjusters.lastDayOfMonth()).getDayOfMonth());
+&#x2F;&#x2F;        System.out.println(localDate.with(TemporalAdjusters.lastDayOfMonth()).plusDays(1));
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -508,7 +616,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhaxiaobao.github.io/2019/08/29/%E7%BA%A7%E8%81%94/">http://zhaxiaobao.github.io/2019/08/29/%E7%BA%A7%E8%81%94/</a>
+                    <a href="http://zhaxiaobao.github.io/2021/07/15/uuid-gong-ju-lei/">http://zhaxiaobao.github.io/2021/07/15/uuid-gong-ju-lei/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +654,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/xml/">
-                                    <span class="chip bg-color">xml</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -597,13 +705,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/15/UUID%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                <a href="/2022/10/08/ant-design-pro/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="UUID工具类">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Ant Design Pro">
                         
-                        <span class="card-title">UUID工具类</span>
+                        <span class="card-title">Ant Design Pro</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -614,12 +722,16 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            SmallBaby·Zha
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Restful/" class="post-category">
+                                    Restful
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -642,13 +754,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/17/%E4%BD%BF%E5%AE%9E%E7%94%A8%E6%96%B9%E6%B3%95/">
+                <a href="/2019/08/29/ji-lian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="实用方法">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="级联">
                         
-                        <span class="card-title">实用方法</span>
+                        <span class="card-title">级联</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -659,12 +771,16 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-08-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            SmallBaby·Zha
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/sql/" class="post-category">
+                                    sql
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -672,8 +788,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/sql/">
+                        <span class="chip bg-color">sql</span>
                     </a>
                     
                 </div>
